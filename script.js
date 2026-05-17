@@ -66,7 +66,7 @@ if (window.matchMedia('(max-width: 768px)').matches) {
   pip.loop = true;
   pip.playsInline = true;
   pip.preload = 'auto';
-  pip.style.cssText = 'position:fixed;bottom:0.5rem;left:0.5rem;width:104px;height:58px;z-index:999;border-radius:4px;pointer-events:none;object-fit:cover;background:#000';
+  pip.style.cssText = 'position:fixed;bottom:1rem;right:1rem;width:104px;height:58px;z-index:999;border-radius:4px;pointer-events:none;object-fit:cover;background:#000';
   document.body.appendChild(pip);
 
   const sections = document.querySelectorAll('.project-section');
