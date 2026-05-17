@@ -152,6 +152,10 @@ body {
 }
 
 @media (max-width: 768px) {
+  .section {
+    background: #000;
+  }
+
   #navbar {
     padding: 1rem 1.25rem;
   }
