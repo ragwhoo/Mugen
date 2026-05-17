@@ -124,21 +124,24 @@ body {
 }
 
 .project-section .project-video {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  width: min(420px, 70vw);
+  height: min(236px, 40vw);
+  object-fit: cover;
   opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: 2;
+  border-radius: 8px;
+}
+
+.project-section.active .project-video {
+  opacity: 1;
 }
 
 #contact {
   background: #000;
-}
-
-#cursor-video {
-  position: fixed;
-  width: 500px;
-  height: 281px;
-  object-fit: cover;
-  pointer-events: none;
-  z-index: 999;
-  opacity: 0;
 }
 
 .footer-note {
@@ -192,16 +195,6 @@ body {
 
   #cursor-video {
     display: none;
-  }
-
-  .project-section .project-video {
-    inset: auto;
-    bottom: 2rem;
-    right: 2rem;
-    width: min(280px, 70vw);
-    height: min(158px, 40vw);
-    border-radius: 6px;
-    z-index: 2;
   }
 
   .footer-note {
