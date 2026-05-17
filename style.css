@@ -163,7 +163,6 @@ body {
   #cursor-video {
     display: none;
   }
-}
 
   #navbar {
     padding: 1rem 1.25rem;
@@ -202,22 +201,6 @@ body {
   #hero .bg-img {
     background-image: url('MUGENMOBILE.png') !important;
     background-size: contain;
-  }
-
-  #cursor-video {
-    display: none;
-  }
-
-  .project-section .project-video {
-    display: block !important;
-    inset: auto;
-    bottom: 1rem;
-    left: 1rem;
-    width: min(160px, 40vw);
-    height: min(90px, 22.5vw);
-    border-radius: 6px;
-    z-index: 20;
-    opacity: 1 !important;
   }
 
   .footer-note {

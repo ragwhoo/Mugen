@@ -59,34 +59,48 @@ document.querySelectorAll('.project-section').forEach(section => {
   });
 });
 
-// Mobile
+// Mobile PiP
 if (window.matchMedia('(max-width: 768px)').matches) {
-  document.querySelectorAll('.project-section .project-video').forEach(video => {
-    video.setAttribute('playsinline', '');
-    video.preload = 'auto';
+  const pip = document.createElement('video');
+  pip.muted = true;
+  pip.loop = true;
+  pip.playsInline = true;
+  pip.preload = 'auto';
+  pip.style.cssText = 'position:fixed;bottom:1rem;left:1rem;width:160px;height:90px;z-index:999;border-radius:6px;pointer-events:none;object-fit:cover;background:#000';
+  document.body.appendChild(pip);
+
+  const sections = document.querySelectorAll('.project-section');
+  const srcs = [];
+  sections.forEach(s => {
+    srcs.push(s.querySelector('.project-video')?.getAttribute('src'));
   });
 
-  // Show the current section's video as PiP immediately
-  const showPip = () => {
-    const sections = document.querySelectorAll('.project-section');
-    let found = false;
-    sections.forEach(s => {
-      const video = s.querySelector('.project-video');
-      if (!video) return;
+  // Show first video immediately
+  if (srcs[0]) {
+    pip.src = srcs[0];
+    pip.load();
+    pip.play().catch(() => {});
+  }
+
+  // Switch as user scrolls
+  const updatePip = () => {
+    let shown = false;
+    sections.forEach((s, i) => {
       const rect = s.getBoundingClientRect();
-      if (!found && rect.top < window.innerHeight && rect.bottom > 0) {
-        video.style.cssText = 'position:fixed!important;bottom:1rem;left:1rem;width:160px;height:90px;z-index:999;border-radius:6px;pointer-events:none;object-fit:cover;background:#000;opacity:1!important';
-        video.play().catch(() => {});
-        found = true;
-      } else {
-        video.style.cssText = 'position:absolute;opacity:0;pointer-events:none;width:1px;height:1px';
+      if (!shown && rect.top < window.innerHeight && rect.bottom > 0 && srcs[i]) {
+        if (pip.src.indexOf(srcs[i]) === -1) {
+          pip.src = srcs[i];
+          pip.currentTime = 0;
+          pip.load();
+          pip.play().catch(() => {});
+        }
+        shown = true;
       }
     });
   };
 
-  showPip();
-  document.addEventListener('scroll', showPip, { passive: true });
-  document.addEventListener('touchstart', () => {
-    document.querySelector('.project-section .project-video[style*="fixed"]')?.play().catch(() => {});
-  }, { once: true });
+  document.addEventListener('scroll', updatePip, { passive: true });
+  updatePip();
+
+  document.addEventListener('touchstart', () => { pip.play().catch(() => {}); }, { once: true });
 }
