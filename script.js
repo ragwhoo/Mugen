@@ -66,7 +66,7 @@ if (window.matchMedia('(max-width: 768px)').matches) {
   pip.loop = true;
   pip.playsInline = true;
   pip.preload = 'auto';
-  pip.style.cssText = 'position:fixed;bottom:1rem;right:1rem;width:200px;height:112px;z-index:999;border-radius:4px;pointer-events:none;object-fit:cover;background:#000';
+  pip.style.cssText = 'position:fixed;bottom:1rem;right:1rem;width:200px;height:112px;z-index:999;border-radius:4px;pointer-events:none;object-fit:cover;background:#000;display:none';
   document.body.appendChild(pip);
 
   const sections = document.querySelectorAll('.project-section');
@@ -75,28 +75,25 @@ if (window.matchMedia('(max-width: 768px)').matches) {
     srcs.push(s.querySelector('.project-video')?.getAttribute('src'));
   });
 
-  // Show first video immediately
-  if (srcs[0]) {
-    pip.src = srcs[0];
-    pip.load();
-    pip.play().catch(() => {});
-  }
-
-  // Switch as user scrolls
   const updatePip = () => {
-    let shown = false;
+    let visible = false;
     sections.forEach((s, i) => {
       const rect = s.getBoundingClientRect();
-      if (!shown && rect.top < window.innerHeight && rect.bottom > 0 && srcs[i]) {
+      if (!visible && rect.top < window.innerHeight && rect.bottom > 0 && srcs[i]) {
         if (pip.src.indexOf(srcs[i]) === -1) {
           pip.src = srcs[i];
           pip.currentTime = 0;
           pip.load();
-          pip.play().catch(() => {});
         }
-        shown = true;
+        pip.style.display = 'block';
+        pip.play().catch(() => {});
+        visible = true;
       }
     });
+    if (!visible) {
+      pip.style.display = 'none';
+      pip.pause();
+    }
   };
 
   document.addEventListener('scroll', updatePip, { passive: true });
