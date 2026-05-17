@@ -58,3 +58,35 @@ document.querySelectorAll('.project-section').forEach(section => {
     leaveTimeout = setTimeout(() => { cursorVideo.pause(); cursorVideo.src = ''; }, 300);
   });
 });
+
+// Mobile: autoplay PiP video on scroll
+if (window.innerWidth <= 768) {
+  document.querySelectorAll('.project-section').forEach(section => {
+    const video = section.querySelector('.project-video');
+    if (!video) return;
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top center',
+      end: 'bottom center',
+      onEnter: () => {
+        section.classList.add('active');
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      },
+      onLeave: () => {
+        section.classList.remove('active');
+        video.pause();
+      },
+      onEnterBack: () => {
+        section.classList.add('active');
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      },
+      onLeaveBack: () => {
+        section.classList.remove('active');
+        video.pause();
+      }
+    });
+  });
+}

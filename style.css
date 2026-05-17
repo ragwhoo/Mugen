@@ -206,6 +206,12 @@ body {
     height: min(158px, 40vw);
     border-radius: 6px;
     z-index: 2;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .project-section.active .project-video {
+    opacity: 1;
   }
 
   .footer-note {
