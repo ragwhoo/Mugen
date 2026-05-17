@@ -192,6 +192,7 @@ body {
 
   #hero .bg-img {
     background-image: url('mogenmobilehero.png') !important;
+    background-size: contain;
   }
 
   #cursor-video {
@@ -201,16 +202,11 @@ body {
   .project-section .project-video {
     inset: auto;
     bottom: 2rem;
-    right: 2rem;
+    left: 2rem;
     width: min(280px, 70vw);
     height: min(158px, 40vw);
     border-radius: 6px;
     z-index: 2;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-  }
-
-  .project-section.active .project-video {
     opacity: 1;
   }
 
