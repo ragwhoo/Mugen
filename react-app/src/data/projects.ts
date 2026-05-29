@@ -1,5 +1,6 @@
 import srirangaImg from '../assets/sriranga.png'
 import resolveImg from '../assets/resolvemockup.png'
+import rutuamImg from '../assets/rutuam.png'
 import srirangaVideo from '../assets/srirangavideo.mp4'
 import resolveVideo from '../assets/resolvelms.mp4'
 
@@ -20,7 +21,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'project-0',
     img: resolveImg,
-    thumbnail: '/images/resolvemockup.png',
+    thumbnail: resolveImg,
     videoSrc: resolveVideo,
     title: 'RESOLVE',
     year: '2026',
@@ -33,7 +34,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'project-1',
     img: srirangaImg,
-    thumbnail: '/images/sriranga.png',
+    thumbnail: srirangaImg,
     videoSrc: srirangaVideo,
     title: 'SRIRANGA ORGANICS',
     year: '2026',
@@ -45,8 +46,8 @@ export const PROJECTS: ProjectData[] = [
   },
   {
     id: 'project-2',
-    img: '/images/Untitled%20design%20(9).png',
-    thumbnail: '/images/Untitled%20design%20(9).png',
+    img: rutuamImg,
+    thumbnail: rutuamImg,
     title: 'RUTUAM',
     year: '2026',
     category: 'Visual Identity / Branding',

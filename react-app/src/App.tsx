@@ -8,7 +8,7 @@ import bgWatermark from './assets/mugen-bg-watermark.png'
 
 export default function App() {
   return (
-    <BrowserRouter basename="/studio-mugen">
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <img
         src={bgWatermark}
         alt=""

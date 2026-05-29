@@ -7,8 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:pages": "tsc -b && vite build --base=/studio-mugen/",
     "preview": "vite preview",
-    "predeploy": "npm run build && copy dist\\index.html dist\\404.html",
+    "predeploy": "npm run build:pages && copy dist\\index.html dist\\404.html",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
