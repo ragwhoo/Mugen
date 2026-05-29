@@ -13,8 +13,8 @@ import { PROJECTS } from '../../data/projects'
 const N = PROJECTS.length
 const SPACING = 320
 
-const CARD_W = 280
-const CARD_H = 400
+const CARD_W = 400
+const CARD_H = 280
 
 function Card({
   index,

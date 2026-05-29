@@ -17,7 +17,7 @@ export default function DotBackground() {
         <DotGrid
           dotSize={10}
           gap={38}
-          baseColor="#111113"
+          baseColor="#1c1c20"
           activeColor="#ffffff"
           proximity={260}
           speedTrigger={260}

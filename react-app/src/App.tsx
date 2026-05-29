@@ -23,9 +23,9 @@ export default function App() {
           left: '50%',
           top: '50%',
           transform: 'translate(-50%, -50%)',
-          objectFit: 'contain',
-          opacity: 0.05,
-          filter: 'grayscale(1) contrast(1.6) brightness(1.15)',
+          objectFit: 'cover',
+          opacity: 0.4,
+          mixBlendMode: 'screen',
         }}
       />
       <DotBackground />

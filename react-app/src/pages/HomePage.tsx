@@ -42,12 +42,12 @@ function SectionFadeIn({
   return (
     <motion.section
       id={id}
-      className={`section relative w-full h-screen overflow-hidden ${className}`}
+      className={`section relative w-full min-h-screen overflow-hidden ${className}`}
       style={style}
-      initial={{ opacity: 0.4, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-15% 0px' }}
-      transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+      initial={{ opacity: 0.6 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: '-10% 0px' }}
+      transition={{ duration: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
     >
       {children}
     </motion.section>
