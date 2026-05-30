@@ -3,6 +3,8 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Lenis from 'lenis'
 import Navbar from '../components/nav/Navbar'
 import ProjectGallery from '../components/sections/ProjectGallery'
+import ProjectHero from '../components/sections/ProjectHero'
+import { PROJECTS } from '../data/projects'
 import mugenLogo from '../assets/mugen.png'
 import blackholeImg from '../assets/blackhole.png'
 
@@ -93,6 +95,8 @@ export default function HomePage() {
         />
       </motion.section>
 
+      <ProjectGallery />
+
       <SectionFadeIn id="portfolio">
         <SectionOverlay />
         <div
@@ -121,7 +125,11 @@ export default function HomePage() {
         </div>
       </SectionFadeIn>
 
-      <ProjectGallery />
+      <div className="relative z-10">
+        {PROJECTS.slice(0, 2).map((project) => (
+          <ProjectHero key={project.id} project={project} />
+        ))}
+      </div>
 
       <SectionFadeIn id="about">
         <img
