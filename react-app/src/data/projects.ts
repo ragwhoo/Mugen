@@ -2,7 +2,6 @@ import srirangaImg from '../assets/sriranga.png'
 import resolveImg from '../assets/resolvemockup.png'
 import p3Img from '../assets/p3.png'
 import bangloreImg from '../assets/banglore.png'
-import p5Img from '../assets/p5.png'
 import rutamImg from '../assets/rutam.png'
 import p7Img from '../assets/p7.png'
 import blind75Img from '../assets/blind75.png'
@@ -50,8 +49,8 @@ export const PROJECTS: ProjectData[] = [
   },
   {
     id: 'project-2',
-    img: p5Img,
-    thumbnail: p5Img,
+    img: srirangaImg,
+    thumbnail: srirangaImg,
     title: 'SRIRANGA ORGANICS',
     year: '2026',
     category: 'Brand Identity / Web Experience',
