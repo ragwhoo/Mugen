@@ -95,7 +95,7 @@ function Card({
         />
         <div
           className="absolute bottom-4 right-4"
-          style={{ opacity: active ? 1 : 0, textAlign: 'right' }}
+          style={{ opacity: active ? 1 : 0, textAlign: 'right', transition: 'opacity 0.8s cubic-bezier(0.2, 0.9, 0.3, 1)' }}
         >
           <h3
             className="text-white uppercase text-sm tracking-wider"
