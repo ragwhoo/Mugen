@@ -55,8 +55,18 @@ export default function ProjectHero({
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse 140% 100% at 0% 100%, rgba(0,0,0,0.65) 0%, transparent 60%)',
+        }}
+      />
+      <div
         className="absolute z-10"
-        style={{ bottom: '12%', left: '6%', maxWidth: '55%' }}
+        style={{
+          bottom: '12%',
+          left: '4%',
+          maxWidth: '75%',
+        }}
       >
         <span
           className="text-white/30 text-[10px] uppercase tracking-[0.2em] block"
