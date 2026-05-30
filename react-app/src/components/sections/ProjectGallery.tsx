@@ -94,8 +94,8 @@ function Card({
           }}
         />
         <div
-          className="absolute bottom-4 left-4 right-4"
-          style={{ opacity: active ? 1 : 0 }}
+          className="absolute bottom-4 right-4"
+          style={{ opacity: active ? 1 : 0, textAlign: 'right' }}
         >
           <h3
             className="text-white uppercase text-sm tracking-wider"
