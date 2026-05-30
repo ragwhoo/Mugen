@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Lenis from 'lenis'
 import Navbar from '../components/nav/Navbar'
-import Orb from '../components/atmosphere/Orb'
 import ProjectGallery from '../components/sections/ProjectGallery'
 import mugenLogo from '../assets/mugen.png'
 import blackholeImg from '../assets/blackhole.png'
@@ -119,24 +118,6 @@ export default function HomePage() {
           >
             Mugen is a creative studio crafting cinematic digital experiences, immersive branding, and visually driven products. We blend design, storytelling, and technology to create work that feels timeless, atmospheric, and intentional.
           </p>
-        </div>
-        <div
-          className="absolute pointer-events-none"
-          style={{
-            width: 'clamp(400px, 45vw, 680px)',
-            height: 'clamp(400px, 45vw, 680px)',
-            right: '-5%',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            zIndex: 1,
-          }}
-        >
-          <Orb
-            hue={0}
-            hoverIntensity={0.5}
-            rotateOnHover
-            forceHoverState={false}
-          />
         </div>
       </SectionFadeIn>
 
