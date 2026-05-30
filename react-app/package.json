@@ -3,13 +3,14 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://praagatii.github.io/studio-mugen",
+  "homepage": "https://studio-mugen.com",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "build:pages": "tsc -b && vite build --base=/studio-mugen/",
+    "build": "vite build",
+    "build:deploy": "vite build",
     "preview": "vite preview",
-    "predeploy": "npm run build:pages && copy dist\\index.html dist\\404.html",
+    "predeploy": "npm run build:deploy && copy dist\\index.html dist\\404.html",
+    "deploy:subpath": "vite build --base=/studio-mugen/ && copy dist\\index.html dist\\404.html && gh-pages -d dist",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
