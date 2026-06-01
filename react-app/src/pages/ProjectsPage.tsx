@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react'
+import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useLocation } from 'react-router-dom'
 import Lenis from 'lenis'
@@ -54,17 +54,7 @@ export default function ProjectsPage() {
         <ProjectHero key={project.id} project={project} />
       ))}
 
-      <footer
-        className="relative w-full h-[30vh] flex items-end"
-        style={{ background: '#000' }}
-      >
-        <p
-          className="absolute bottom-8 left-[6%] text-white/40 text-xs uppercase tracking-wider"
-          style={{ fontSize: '0.75rem' }}
-        >
-          &copy; 2026 Mugen Studios. All rights reserved.
-        </p>
-      </footer>
+
     </div>
   )
 }
