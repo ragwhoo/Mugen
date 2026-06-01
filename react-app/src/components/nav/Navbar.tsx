@@ -55,7 +55,8 @@ export default function Navbar() {
   )
 
   return (
-    <motion.nav
+    <>
+      <motion.nav
       className="fixed top-0 left-0 w-full z-50"
       style={{
         padding: 'clamp(16px, 3vw, 28px) clamp(20px, 4vw, 56px)',
@@ -157,6 +158,8 @@ export default function Navbar() {
         </div>
       </button>
 
+      </motion.nav>
+
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -228,6 +231,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   )
 }
