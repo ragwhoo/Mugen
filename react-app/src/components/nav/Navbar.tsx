@@ -141,11 +141,8 @@ export default function Navbar() {
         className="md:hidden flex items-center justify-center"
         onClick={() => setMenuOpen(!menuOpen)}
         style={{
-          background: 'rgba(0,0,0,0.25)',
-          backdropFilter: 'blur(8px)',
-          WebkitBackdropFilter: 'blur(8px)',
-          border: '1px solid rgba(255,255,255,0.15)',
-          borderRadius: '6px',
+          background: 'none',
+          border: 'none',
           padding: '8px',
           cursor: 'pointer',
           width: '34px',
