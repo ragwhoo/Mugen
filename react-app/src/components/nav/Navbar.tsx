@@ -138,22 +138,26 @@ export default function Navbar() {
       </div>
 
       <button
-        className="md:hidden flex flex-col items-center justify-center"
+        className="md:hidden flex items-center justify-center"
         onClick={() => setMenuOpen(!menuOpen)}
         style={{
-          background: 'none',
-          border: 'none',
-          padding: '6px',
+          background: 'rgba(0,0,0,0.25)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+          border: '1px solid rgba(255,255,255,0.15)',
+          borderRadius: '6px',
+          padding: '8px',
           cursor: 'pointer',
-          width: '28px',
-          height: '20px',
-          gap: '5px',
+          width: '34px',
+          height: '34px',
         }}
         aria-label="Toggle menu"
       >
-        <span style={{ display: 'block', width: '24px', height: '1.5px', backgroundColor: 'white', transition: 'all 0.3s ease', transform: menuOpen ? 'rotate(45deg) translate(4.5px, 4.5px)' : 'none' }} />
-        <span style={{ display: 'block', width: '24px', height: '1.5px', backgroundColor: 'white', transition: 'all 0.3s ease', opacity: menuOpen ? 0 : 1 }} />
-        <span style={{ display: 'block', width: '24px', height: '1.5px', backgroundColor: 'white', transition: 'all 0.3s ease', transform: menuOpen ? 'rotate(-45deg) translate(4.5px, -4.5px)' : 'none' }} />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'center' }}>
+          <span style={{ display: 'block', width: '18px', height: '1.5px', backgroundColor: 'white', transition: 'all 0.3s ease', transform: menuOpen ? 'rotate(45deg) translate(4.5px, 4.5px)' : 'none' }} />
+          <span style={{ display: 'block', width: '18px', height: '1.5px', backgroundColor: 'white', transition: 'all 0.3s ease', opacity: menuOpen ? 0 : 1 }} />
+          <span style={{ display: 'block', width: '18px', height: '1.5px', backgroundColor: 'white', transition: 'all 0.3s ease', transform: menuOpen ? 'rotate(-45deg) translate(4.5px, -4.5px)' : 'none' }} />
+        </div>
       </button>
 
       <AnimatePresence>
@@ -161,7 +165,10 @@ export default function Navbar() {
           <motion.div
             className="fixed inset-0 z-40 md:hidden"
             style={{
-              background: 'rgba(0,0,0,0.95)',
+              background: 'rgba(0, 0, 0, 0.7)',
+              backdropFilter: 'blur(24px) saturate(1.4)',
+              WebkitBackdropFilter: 'blur(24px) saturate(1.4)',
+              borderTop: '1px solid rgba(255,255,255,0.06)',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
