@@ -36,13 +36,17 @@ export default function Navbar() {
       }
       e.preventDefault()
       const hash = href.replace('/#', '')
+      if (pathname !== '/') {
+        navigate('/#' + hash)
+        return
+      }
       const target = document.getElementById(hash)
       const l = (window as any).lenis
       if (target && l) {
         l.scrollTo(target, { offset: -60 })
       }
     },
-    [navigate],
+    [navigate, pathname],
   )
 
   return (

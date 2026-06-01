@@ -58,6 +58,16 @@ function SectionFadeIn({
 export default function HomePage() {
   useLenis()
 
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '')
+    if (!hash) return
+    const el = document.getElementById(hash)
+    const l = (window as any).lenis
+    if (el && l) {
+      setTimeout(() => l.scrollTo(el, { offset: -60 }), 100)
+    }
+  }, [])
+
   const heroRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: heroRef,
