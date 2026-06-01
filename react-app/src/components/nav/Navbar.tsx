@@ -160,7 +160,7 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 md:hidden"
+            className="fixed inset-0 z-[60] md:hidden"
             style={{
               background: '#000',
               display: 'flex',
@@ -175,6 +175,29 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             onClick={() => setMenuOpen(false)}
           >
+            <button
+              onClick={() => setMenuOpen(false)}
+              style={{
+                position: 'absolute',
+                top: 'clamp(16px, 3vw, 28px)',
+                right: 'clamp(20px, 4vw, 56px)',
+                background: 'none',
+                border: 'none',
+                padding: '8px',
+                cursor: 'pointer',
+                width: '34px',
+                height: '34px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '5px',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              aria-label="Close menu"
+            >
+              <span style={{ display: 'block', width: '20px', height: '1.5px', backgroundColor: 'white', transform: 'rotate(45deg)', position: 'absolute' }} />
+              <span style={{ display: 'block', width: '20px', height: '1.5px', backgroundColor: 'white', transform: 'rotate(-45deg)', position: 'absolute' }} />
+            </button>
             {NAV_ITEMS.map((item) => {
               const active = isActive(item, pathname)
               return (
