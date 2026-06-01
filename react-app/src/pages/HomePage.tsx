@@ -5,7 +5,6 @@ import Lenis from 'lenis'
 import Navbar from '../components/nav/Navbar'
 import ProjectGallery from '../components/sections/ProjectGallery'
 import mugenLogo from '../assets/mugen.png'
-import mugenMobileImg from '../assets/mugenmobile.png'
 import blackholeImg from '../assets/blackhole.png'
 
 function useLenis() {
@@ -99,20 +98,17 @@ export default function HomePage() {
             background: 'radial-gradient(ellipse 50% 35% at 50% 50%, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 35%, transparent 65%)',
           }}
         />
-        <picture>
-          <source media="(max-width: 767px)" srcSet={mugenMobileImg} />
-          <img
-            src={mugenLogo}
-            alt="Mugen"
-            className="block"
-            style={{
-              width: 'min(82vw, 980px)',
-              height: 'auto',
-              objectFit: 'contain',
-              filter: 'drop-shadow(0 0 24px rgba(255,255,255,0.04))',
-            }}
-          />
-        </picture>
+        <img
+          src={mugenLogo}
+          alt="Mugen"
+          className="block"
+          style={{
+            width: 'min(82vw, 980px)',
+            height: 'auto',
+            objectFit: 'contain',
+            filter: 'drop-shadow(0 0 24px rgba(255,255,255,0.04))',
+          }}
+        />
       </motion.section>
 
       <ProjectGallery />
