@@ -162,10 +162,7 @@ export default function Navbar() {
           <motion.div
             className="fixed inset-0 z-40 md:hidden"
             style={{
-              background: 'rgba(0, 0, 0, 0.7)',
-              backdropFilter: 'blur(24px) saturate(1.4)',
-              WebkitBackdropFilter: 'blur(24px) saturate(1.4)',
-              borderTop: '1px solid rgba(255,255,255,0.06)',
+              background: '#000',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
